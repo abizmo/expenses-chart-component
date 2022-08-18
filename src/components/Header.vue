@@ -1,8 +1,16 @@
-<script setup></script>
+<script>
+export default {
+  props: {
+    balance: Number,
+  },
+};
+</script>
 
 <template>
   <div class="header">
-    <h1 class="header--title">My balance <span>$921.48</span></h1>
+    <h1 class="header--title">
+      My balance <span>${{ balance }}</span>
+    </h1>
     <img class="header--logo" src="../assets/logo.svg" alt="expenses" />
   </div>
 </template>
