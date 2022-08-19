@@ -28,6 +28,7 @@ export default {
   display: grid;
   gap: var(--sizes-200);
   font-size: var(--fs-400);
+  color: var(--clr-neutral-200);
 }
 
 .header--title span {
