@@ -1,20 +1,28 @@
 <script setup>
-  import { ref, watchEffect } from "vue";
+  import { computed, ref, watchEffect } from "vue";
   import getData from "../services/getData";
 
   const bars = ref(null);
 
   watchEffect(async () => {
     bars.value = await getData();
-    console.log(bars);
   });
+
+  const maxAmount = computed(() =>
+    Math.max(...bars.value.map(({ amount }) => amount))
+  );
 </script>
 <template>
   <div class="details">
     <h2 class="details--header">Spending - Last 7 days</h2>
     <div class="chart">
       <div class="chart--bar" v-for="{ day, amount } in bars">
-        {{ day }}
+        <div
+          class="bar"
+          :class="{ max: amount === maxAmount }"
+          :style="{ '--bar-height': (amount / maxAmount) * 150 + 'px' }"
+        />
+        <p>{{ day }}</p>
       </div>
     </div>
     <div class="details--summary">
@@ -60,11 +68,29 @@
   }
   .chart {
     display: flex;
+    align-items: flex-end;
     gap: var(--sizes-300);
+    height: 13rem;
   }
 
   .chart--bar {
     flex: 1;
     text-align: center;
+  }
+
+  .bar {
+    background-color: var(--clr-primary-500);
+    border-radius: var(--sizes-100);
+    height: var(--bar-height, 0px);
+    margin-bottom: var(--sizes-200);
+  }
+
+  .max {
+    background-color: var(--clr-secondary-500);
+  }
+
+  .bar:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
   }
 </style>
