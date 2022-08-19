@@ -1,18 +1,12 @@
 <script setup>
 import Header from './Header.vue';
+import Body from './Body.vue';
 </script>
 
 <template>
   <div class="container">
     <Header balance="921.48" />
-    <div>
-      <h2>Spending - Last 7 days</h2>
-      <div class="chart">mon tue wed thu fri sat sun</div>
-      <div class="summary">
-        <div class="total">Total this month $478.33</div>
-        <div class="increase">+2.4% from last month</div>
-      </div>
-    </div>
+    <Body />
   </div>
 </template>
 
