@@ -4,7 +4,7 @@ import Header from './Header.vue';
 
 <template>
   <div class="container">
-    <Header />
+    <Header balance="921.48" />
     <div>
       <h2>Spending - Last 7 days</h2>
       <div class="chart">mon tue wed thu fri sat sun</div>
