@@ -19,8 +19,6 @@
 footer {
   font-size: var(--fs-200);
   background-color: var(--clr-neutral-800);
-  position: fixed;
-  inset: auto 0 0;
   color: var(--clr-neutral-200);
   padding-block: var(--sizes-600);
 }

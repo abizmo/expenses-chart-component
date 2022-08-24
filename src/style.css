@@ -49,6 +49,9 @@ body {
 
 #app {
   width: 100%;
+  display: grid;
+  min-height: 100%;
+  align-items: end;
 }
 
 .container {

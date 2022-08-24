@@ -1,6 +1,6 @@
 <script setup>
-  import Balance from "./Balance.vue";
-  import Body from "./Body.vue";
+import Balance from './Balance.vue';
+import Body from './Body.vue';
 </script>
 
 <template>
@@ -11,8 +11,8 @@
 </template>
 
 <style scoped>
-  .expenses-container {
-    --gap: var(--sizes-400);
-    margin-bottom: 5rem;
-  }
+.expenses-container {
+  --gap: var(--sizes-400);
+  margin-block: 3rem;
+}
 </style>
